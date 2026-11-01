@@ -6,8 +6,8 @@ import "@testing-library/jest-dom/vitest";
 
 // Finish every Motion animation immediately so tests assert end states.
 MotionGlobalConfig.skipAnimations = true;
-// The first quiz test also loads Motion's lazy feature chunk, which takes over a second on CI runners.
-configure({ asyncUtilTimeout: 5000 });
+// CI runners are slower than laptops; stay well inside the 5 s test timeout.
+configure({ asyncUtilTimeout: 3000 });
 
 afterEach(() => {
   cleanup();

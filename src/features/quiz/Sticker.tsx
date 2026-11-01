@@ -28,7 +28,7 @@ export function WarmStickers({ stickers }: { stickers: StickerData[] }) {
   return (
     <div className="warm" aria-hidden="true">
       {stickers.map((sticker) => (
-        <Image key={sticker.src.src} src={sticker.src} alt="" sizes={SIZES} loading="eager" fetchPriority="low" />
+        <Image key={sticker.alt} src={sticker.src} alt="" sizes={SIZES} loading="eager" fetchPriority="low" />
       ))}
     </div>
   );

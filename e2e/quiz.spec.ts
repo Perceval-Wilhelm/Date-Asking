@@ -176,7 +176,7 @@ test("keeps the first load light", async ({ page }) => {
     if (request.resourceType() === "script") scriptBytes += (await request.sizes()).responseBodySize;
   });
   await page.goto("/", { waitUntil: "networkidle" });
-  // Compressed JavaScript before the note is opened; Motion's features load lazily.
+  // Compressed JavaScript before the note is opened; confetti only loads after a yes.
   expect(scriptBytes).toBeGreaterThan(0);
   expect(scriptBytes).toBeLessThan(260_000);
 });

@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, LazyMotion, MotionConfig, m, useAnimate, useReducedMotion } from "motion/react";
+import { AnimatePresence, LazyMotion, MotionConfig, domMax, m, useAnimate, useReducedMotion } from "motion/react";
 import { useReducer, useState } from "react";
 import { invitation } from "@/content/invitation";
 import { Icon } from "./art";
@@ -11,7 +11,6 @@ import { prefs, usePrefs } from "./prefs";
 import { Sheet } from "./Sheet";
 import { buzz, sfx } from "./sound";
 
-const loadFeatures = () => import("./motion-features").then((module) => module.default);
 const HEART = "M12 21 C 5 16, 1 12, 2 8 C 3 4, 9 3, 12 7 C 15 3, 21 4, 22 8 C 23 12, 19 16, 12 21 Z";
 
 async function celebrate(from: DOMRect) {
@@ -88,7 +87,8 @@ export function Quiz({ answered }: { answered: boolean }) {
         : "";
 
   return (
-    <LazyMotion features={loadFeatures} strict>
+    // Features load with the page: a tap that beat a lazy chunk left exit animations, and the quiz, stuck.
+    <LazyMotion features={domMax} strict>
       <MotionConfig reducedMotion="user">
         <button
           type="button"
