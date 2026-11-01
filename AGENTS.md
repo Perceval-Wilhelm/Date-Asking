@@ -1,4 +1,4 @@
-# Date-Asking contributor guide
+# date-asking contributor guide
 
 A single-page pop quiz that asks someone on a study date. Read `README.md` first; it covers the experience, commands, delivery and observability.
 
@@ -17,7 +17,8 @@ A single-page pop quiz that asks someone on a study date. Read `README.md` first
 - Every interactive element is a real button, link or input with a name that contains its visible text. Run the axe scan in `e2e/` after UI changes.
 - No backend, accounts, custom analytics events or third-party scripts without a new product requirement. Keep the monitoring privacy filter and production-only mounting.
 - Pin direct dependency versions and commit `yarn.lock`. Prefer the newest stable versions that work together; do not force peers or add broad resolutions. TypeScript stays on 6.x until `typescript-eslint` supports 7.
-- Keep GitHub Action references pinned to full commit SHAs and keep the job names **Date-Asking quality** and **Date-Asking browser**: the branch ruleset and Vercel deployment checks require them by name.
+- Keep GitHub Action references pinned to full commit SHAs and keep the job names **Date-Asking quality** and **Date-Asking browser**: the branch ruleset and Vercel deployment checks require them by name, so rename all three together or not at all.
+- The code is MIT licensed; the cat photos and fonts are not ours to license. Keep the README's License section accurate when assets change.
 - Use Conventional Commits. Commit and push only when asked.
 
 `next.config.ts` sets `agentRules: false` so Next.js does not append generated instructions to this file.
