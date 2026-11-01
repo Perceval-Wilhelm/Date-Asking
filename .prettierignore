@@ -1,0 +1,10 @@
+.next/
+node_modules/
+.yarn/
+out/
+next-env.d.ts
+yarn.lock
+playwright-report/
+test-results/
+coverage/
+.claude/
