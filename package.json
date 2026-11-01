@@ -2,7 +2,7 @@
   "name": "date-asking",
   "private": true,
   "version": "2.0.0",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "description": "A pop quiz passed like a note in class, asking someone on a study date.",
   "type": "module",
   "packageManager": "yarn@4.18.1",

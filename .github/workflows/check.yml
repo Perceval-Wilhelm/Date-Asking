@@ -1,4 +1,4 @@
-name: Check Date-Asking
+name: Check date-asking
 
 on:
   push:
