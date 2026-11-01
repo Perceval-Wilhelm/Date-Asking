@@ -2,7 +2,7 @@
 
 A pop quiz, passed like a note in class, that asks someone on a study date.
 
-**Live:** [date-asking-perceval-wilhelms-projects.vercel.app](https://date-asking-perceval-wilhelms-projects.vercel.app)
+**Live:** [date-asking-phi.vercel.app](https://date-asking-phi.vercel.app)
 
 The visitor taps a folded note to open it. Inside is a notebook-page quiz with one question and two answer bubbles. Every "No" swaps in a sadder cat sticker, adds a doodle, grows the "Yes" and shrinks the "No", while the button pleads ("Are you sure?", "Pookie please", …). After the last plea, a red pen crosses out "No" and writes "Yes ♡". Answering yes fills the bubble, grades the quiz A+, throws confetti and opens a bonus round (time and snack) that fills in a hall pass. From the pass, the visitor can add the date to their calendar or send the answer back.
 
@@ -65,7 +65,7 @@ GitHub [Perceval-Wilhelm/date-asking](https://github.com/Perceval-Wilhelm/date-a
 
 - **Pull requests** run two GitHub Actions jobs from [`.github/workflows/check.yml`](.github/workflows/check.yml): **Date-Asking quality** (immutable install, high-severity dependency audit, `check:all`) and **Date-Asking browser** (the Playwright suite). Vercel builds a preview for every branch, behind Vercel Authentication.
 - **`main`** is protected by a ruleset: changes arrive through pull requests with resolved conversations and both checks passing on an up-to-date branch, history stays linear, merges are squash-only, and force pushes and deletion are blocked. Merged branches are deleted automatically.
-- **Production** builds from `main`. Both checks are registered as Vercel deployment checks, so a production build is only assigned the live domain after they pass.
+- **Production** builds from `main` and serves [date-asking-phi.vercel.app](https://date-asking-phi.vercel.app) (`date-asking.vercel.app` belongs to another account). Both checks are registered as Vercel deployment checks, so a production build is only assigned the live domain after they pass.
 - **Maintenance**: Dependabot proposes grouped weekly updates for npm and GitHub Actions. Dependabot alerts and security updates, secret scanning with push protection, and CodeQL code scanning are on. Actions must be pinned to full commit SHAs, and the workflow token is read-only. Auto-merge is allowed but opt-in per pull request.
 - **Recovery**: use Vercel's Instant Rollback to a previous production deployment, then fix forward with a pull request.
 
