@@ -1,0 +1,15 @@
+node_modules
+.next
+.yarn
+.git
+playwright-report
+test-results
+coverage
+
+# Keep local credentials and project-link metadata out of CLI uploads.
+.env*
+.vercel
+.claude
+.pnp.*
+*.log
+*.tsbuildinfo
